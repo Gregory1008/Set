@@ -52,11 +52,12 @@ class  SetGame
         if cardsInPlay.count > index {
             let chosenCard = cardsInPlay[index]
             if !hiddenCards.contains(chosenCard){
-                if !matchedCards.isEmpty {
+                if !matchedCards.isEmpty, matchedCards.contains(chosenCard) {
                     replaceOrHideMatchedCards()
-                    if !matchedCards.contains(chosenCard){
-                        selectedCards.append(chosenCard)
-                    }
+                //    selectedCards.append(cardsInPlay[index])
+                }else if !matchedCards.isEmpty {
+                    replaceOrHideMatchedCards()
+                    selectedCards.append(chosenCard)
                 } else if selectedCards.count == 3 {
                     selectedCards.removeAll()
                     selectedCards.append(chosenCard)
