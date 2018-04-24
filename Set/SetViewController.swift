@@ -65,7 +65,7 @@ class SetViewController: UIViewController
             let card = game.cardsInPlay[index]
             button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
             button.layer.cornerRadius = 0
-            button.backgroundColor = #colorLiteral(red: 0.4807946086, green: 0.9328747392, blue: 0.733866632, alpha: 1)
+            button.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
             button.setAttributedTitle(symbol(for: card), for: .normal)
         }
         if game.selectedCards.count > 0 {
@@ -83,6 +83,7 @@ class SetViewController: UIViewController
             }
         }
         game.hiddenCards.forEach { let hiddenIndex = game.cardsInPlay.index(of: $0)!
+            visibleCardButtons[hiddenIndex].backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
             visibleCardButtons[hiddenIndex].setTitle(nil , for: .normal)
             visibleCardButtons[hiddenIndex].setAttributedTitle(nil , for: .normal)
         }
@@ -139,9 +140,9 @@ class SetViewController: UIViewController
         }()
         let attributes: [NSAttributedStringKey:Any] = {
             switch card.alpha {
-            case .one: return [ .foregroundColor: symbolColor.withAlphaComponent(1.0), .strokeColor: symbolColor, .font: UIFont.systemFont(ofSize: 15)]
-            case .two: return  [ .foregroundColor: symbolColor.withAlphaComponent(0.4), .strokeColor: symbolColor, .font: UIFont.systemFont(ofSize: 15)]
-            case .three: return [ .strokeWidth: 10.0, .strokeColor: symbolColor, .font: UIFont.systemFont(ofSize: 15)]
+            case .one: return [ .foregroundColor: symbolColor.withAlphaComponent(1.0), .strokeColor: symbolColor, .font: UIFont.systemFont(ofSize: 20)]
+            case .two: return  [ .foregroundColor: symbolColor.withAlphaComponent(0.4), .strokeColor: symbolColor, .font: UIFont.systemFont(ofSize: 20)]
+            case .three: return [ .strokeWidth: 10.0, .strokeColor: symbolColor, .font: UIFont.systemFont(ofSize: 20)]
             }
         }()
         return NSAttributedString(string: shapeAndAmount, attributes:attributes )

@@ -78,9 +78,9 @@ class  SetGame
     }
     
     private func checkForMatch() {
-        if (selectedCards.map {$0.shape }.uniquified.oddCount ||
-            selectedCards.map { $0.color}.uniquified.oddCount ||
-            selectedCards.map {$0.alpha}.uniquified.oddCount ||
+        if (selectedCards.map {$0.shape }.uniquified.oddCount &&
+            selectedCards.map { $0.color}.uniquified.oddCount &&
+            selectedCards.map {$0.alpha}.uniquified.oddCount &&
             selectedCards.map { $0.amount}.uniquified.oddCount) {
             selectedCards.forEach { matchedCards.append($0)}
             score += 3
