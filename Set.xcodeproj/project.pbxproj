@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59816C5B208F75D400A3BB0E /* SetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59816C5A208F75D400A3BB0E /* SetCardView.swift */; };
 		59B52879204E8A00009743CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B52878204E8A00009743CE /* AppDelegate.swift */; };
 		59B5287B204E8A00009743CE /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B5287A204E8A00009743CE /* SetViewController.swift */; };
 		59B5287E204E8A00009743CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B5287C204E8A00009743CE /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59816C5A208F75D400A3BB0E /* SetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardView.swift; sourceTree = "<group>"; };
 		59B52875204E8A00009743CE /* Set.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Set.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59B52878204E8A00009743CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59B5287A204E8A00009743CE /* SetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				59B5287C204E8A00009743CE /* Main.storyboard */,
 				59B5287A204E8A00009743CE /* SetViewController.swift */,
+				59816C5A208F75D400A3BB0E /* SetCardView.swift */,
 				59F7A7EF204FB4FD00A6262C /* SetGame.swift */,
 				59B5288A204E8A49009743CE /* Card.swift */,
 				59F7A7EE204FB4CC00A6262C /* Supporting Files */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59B5287B204E8A00009743CE /* SetViewController.swift in Sources */,
+				59816C5B208F75D400A3BB0E /* SetCardView.swift in Sources */,
 				59B5288B204E8A49009743CE /* Card.swift in Sources */,
 				59F7A7F0204FB4FD00A6262C /* SetGame.swift in Sources */,
 				59B52879204E8A00009743CE /* AppDelegate.swift in Sources */,

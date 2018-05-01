@@ -24,7 +24,7 @@ class SetViewController: UIViewController
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        updateViewFromModel()
+      
     }
     
     @IBAction func newGame() {
@@ -56,7 +56,7 @@ class SetViewController: UIViewController
         for _ in 1...4 {
             game.deal3Cards()
         }
-        updateViewFromModel()
+      
     }
     
     private func updateViewFromModel() {
