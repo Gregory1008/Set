@@ -26,7 +26,7 @@ class  SetGame
         }
     }
     
-    func deal3Cards() {
+    @objc func deal3Cards() {
         if deck.count > 2 {
             for _ in 1...3 {
                 draw()
@@ -35,10 +35,19 @@ class  SetGame
         print(cardsInPlay)
     }
     
+    func shuffleCardsInPlay() {
+        var tempCards = [Card]()
+        for _ in 0..<cardsInPlay.count {
+            tempCards.append(cardsInPlay.remove(at: cardsInPlay.count.arc4random))
+        }
+        cardsInPlay = tempCards
+    }
+    
     func replaceOrHideMatchedCards() {
         for card in matchedCards {
             if deck.isEmpty {
-                hiddenCards.append(cardsInPlay[cardsInPlay.index(of: card)!] )
+                print(card)
+                hiddenCards.append(card)
             } else {
                 cardsInPlay[cardsInPlay.index(of: card)!] = deck.remove(at: deck.count.arc4random)
             }
@@ -49,12 +58,12 @@ class  SetGame
     
     
     func selectCard(at index: Int) {
+        print(index)
         if cardsInPlay.count > index {
             let chosenCard = cardsInPlay[index]
             if !hiddenCards.contains(chosenCard){
                 if !matchedCards.isEmpty, matchedCards.contains(chosenCard) {
                     replaceOrHideMatchedCards()
-                //    selectedCards.append(cardsInPlay[index])
                 }else if !matchedCards.isEmpty {
                     replaceOrHideMatchedCards()
                     selectedCards.append(chosenCard)

@@ -1,98 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vDw-hp-8uH">
-    <device id="retina5_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zym-OJ-VPq">
+    <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Set View Controller-->
-        <scene sceneID="CkH-CS-1PC">
+        <scene sceneID="k9b-aA-h4c">
             <objects>
-                <viewController id="vDw-hp-8uH" customClass="SetViewController" customModule="Set" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sr8-Ju-k88">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                <viewController id="Zym-OJ-VPq" customClass="SetViewController" customModule="Set" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="redraw" id="FNT-HM-duB">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="u4s-Wv-2mW" customClass="SetCardView" customModule="Set" customModuleProvider="target">
-                                <rect key="frame" x="16" y="304" width="343" height="214"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="u4s-Wv-2mW" secondAttribute="height" multiplier="8:5" id="WBA-I4-4UL"/>
-                                    <constraint firstAttribute="width" priority="750" constant="800" id="tSR-uT-kdn"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="p1">
-                                        <real key="value" value="-16"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="yp1">
-                                        <real key="value" value="-21"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="p2">
-                                        <real key="value" value="-22"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="yp2">
-                                        <real key="value" value="-25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="q1">
-                                        <real key="value" value="32"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="yq1">
-                                        <real key="value" value="35"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="q2">
-                                        <real key="value" value="-29"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="yq2">
-                                        <real key="value" value="-41"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="r1">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="yr1">
-                                        <real key="value" value="22"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="r2">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="yr2">
-                                        <real key="value" value="22"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="ys1">
-                                        <real key="value" value="-36"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="s1">
-                                        <real key="value" value="-32"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="ys2">
-                                        <real key="value" value="44"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="s2">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05v-fL-Aku">
+                                <rect key="frame" x="8" y="1068" width="267.5" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.79318270359999998" blue="0.37782096570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title=" Deal ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deal3Cards:" destination="Zym-OJ-VPq" eventType="touchUpInside" id="mjT-wj-x4F"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="245" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdk-aK-xNl">
+                                <rect key="frame" x="283.5" y="1068" width="267" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.79318270359999998" blue="0.37782096570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="IoJ-nk-Jsw" customClass="SetGameView" customModule="Set" customModuleProvider="target">
+                                <rect key="frame" x="8" y="28" width="818" height="1032"/>
+                                <color key="backgroundColor" red="0.98277103442834224" green="0.8736078929499449" blue="0.82387931155198046" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIT-5E-9A5">
+                                <rect key="frame" x="558.5" y="1068" width="267.5" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.79318270359999998" blue="0.37782096570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="New">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="newGame:" destination="Zym-OJ-VPq" eventType="touchUpInside" id="Gd7-iH-XF4"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.93007775790000002" blue="0.54024980690000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fyf-L5-ENP" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="u4s-Wv-2mW" secondAttribute="trailing" constant="16" id="Abg-IV-1K2"/>
-                            <constraint firstItem="u4s-Wv-2mW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fyf-L5-ENP" secondAttribute="top" constant="16" id="BbM-kr-b4U"/>
-                            <constraint firstItem="fyf-L5-ENP" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="u4s-Wv-2mW" secondAttribute="bottom" constant="16" id="EMO-O3-fFz"/>
-                            <constraint firstItem="u4s-Wv-2mW" firstAttribute="centerX" secondItem="fyf-L5-ENP" secondAttribute="centerX" id="YBb-XB-DuS"/>
-                            <constraint firstItem="u4s-Wv-2mW" firstAttribute="centerY" secondItem="fyf-L5-ENP" secondAttribute="centerY" id="kCv-qn-oA6"/>
-                            <constraint firstItem="u4s-Wv-2mW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fyf-L5-ENP" secondAttribute="leading" constant="16" id="ucR-b5-sQh"/>
+                            <constraint firstItem="IoJ-nk-Jsw" firstAttribute="top" secondItem="JIp-sN-nKa" secondAttribute="top" constant="8" id="8F6-4m-TcW"/>
+                            <constraint firstItem="Mdk-aK-xNl" firstAttribute="leading" secondItem="05v-fL-Aku" secondAttribute="trailing" constant="8" id="8Zr-eT-cbI"/>
+                            <constraint firstItem="JIp-sN-nKa" firstAttribute="bottom" secondItem="WIT-5E-9A5" secondAttribute="bottom" constant="8" id="DdY-jT-1Lx"/>
+                            <constraint firstItem="JIp-sN-nKa" firstAttribute="trailing" secondItem="IoJ-nk-Jsw" secondAttribute="trailing" constant="8" id="Faq-XU-M8f"/>
+                            <constraint firstItem="WIT-5E-9A5" firstAttribute="top" secondItem="IoJ-nk-Jsw" secondAttribute="bottom" constant="8" id="IS1-5D-x0C"/>
+                            <constraint firstItem="05v-fL-Aku" firstAttribute="top" secondItem="IoJ-nk-Jsw" secondAttribute="bottom" constant="8" id="LEZ-nT-4cQ"/>
+                            <constraint firstItem="JIp-sN-nKa" firstAttribute="trailing" secondItem="WIT-5E-9A5" secondAttribute="trailing" constant="8" id="T4i-xg-Ivu"/>
+                            <constraint firstItem="IoJ-nk-Jsw" firstAttribute="leading" secondItem="JIp-sN-nKa" secondAttribute="leading" constant="8" id="Unp-bZ-FAe"/>
+                            <constraint firstItem="Mdk-aK-xNl" firstAttribute="width" secondItem="WIT-5E-9A5" secondAttribute="width" id="ZbO-m6-KUR"/>
+                            <constraint firstItem="05v-fL-Aku" firstAttribute="leading" secondItem="JIp-sN-nKa" secondAttribute="leading" constant="8" id="avJ-KK-Lr4"/>
+                            <constraint firstItem="JIp-sN-nKa" firstAttribute="bottom" secondItem="Mdk-aK-xNl" secondAttribute="bottom" constant="8" id="gfC-nP-hcG"/>
+                            <constraint firstItem="Mdk-aK-xNl" firstAttribute="top" secondItem="IoJ-nk-Jsw" secondAttribute="bottom" constant="8" id="kS3-ip-HXd"/>
+                            <constraint firstItem="JIp-sN-nKa" firstAttribute="bottom" secondItem="05v-fL-Aku" secondAttribute="bottom" constant="8" id="nyk-eg-EoR"/>
+                            <constraint firstItem="WIT-5E-9A5" firstAttribute="leading" secondItem="Mdk-aK-xNl" secondAttribute="trailing" constant="8" id="pV1-Ps-s8O"/>
+                            <constraint firstItem="05v-fL-Aku" firstAttribute="width" secondItem="Mdk-aK-xNl" secondAttribute="width" id="t17-T7-tNv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fyf-L5-ENP"/>
+                        <viewLayoutGuide key="safeArea" id="JIp-sN-nKa"/>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="Mdk-aK-xNl" id="yps-9J-IDn"/>
+                        <outlet property="setGameView" destination="IoJ-nk-Jsw" id="lHY-9C-C0j"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Z2-cI-75t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OE5-gP-YU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1092" y="-687.192118226601"/>
+            <point key="canvasLocation" x="275" y="-833"/>
         </scene>
     </scenes>
 </document>
