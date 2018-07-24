@@ -18,9 +18,6 @@ struct Card: CustomStringConvertible, Equatable
         return "\(shape)\(color)\(alpha)\(amount)"
     }
     
-    
-    
-    
     var shape: Shape
     var color: Color
     var alpha: Alpha

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zym-OJ-VPq">
-    <device id="ipad10_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="Zym-OJ-VPq" customClass="SetViewController" customModule="Set" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="redraw" id="FNT-HM-duB">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05v-fL-Aku">
-                                <rect key="frame" x="8" y="1068" width="267.5" height="36"/>
+                                <rect key="frame" x="8" y="623" width="114.5" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.79318270359999998" blue="0.37782096570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title=" Deal ">
@@ -30,18 +30,18 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="245" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdk-aK-xNl">
-                                <rect key="frame" x="283.5" y="1068" width="267" height="36"/>
+                                <rect key="frame" x="130.5" y="623" width="114" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.79318270359999998" blue="0.37782096570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="IoJ-nk-Jsw" customClass="SetGameView" customModule="Set" customModuleProvider="target">
-                                <rect key="frame" x="8" y="28" width="818" height="1032"/>
+                                <rect key="frame" x="8" y="28" width="359" height="587"/>
                                 <color key="backgroundColor" red="0.98277103442834224" green="0.8736078929499449" blue="0.82387931155198046" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIT-5E-9A5">
-                                <rect key="frame" x="558.5" y="1068" width="267.5" height="36"/>
+                                <rect key="frame" x="252.5" y="623" width="114.5" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.79318270359999998" blue="0.37782096570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="New">

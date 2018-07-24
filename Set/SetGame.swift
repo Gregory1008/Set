@@ -11,7 +11,6 @@ import Foundation
 class  SetGame
 {
     
-    
     private(set) var deck = [Card]()
     private(set) var cardsInPlay = [Card]()
     private(set) var selectedCards = [Card]()
@@ -21,12 +20,11 @@ class  SetGame
     
     func draw()  {
         if !deck.isEmpty {
-            let newCard = deck.remove(at: deck.count.arc4random)
-            cardsInPlay.append(newCard)
+            cardsInPlay.append(deck.remove(at: deck.count.arc4random))
         }
     }
     
-    @objc func deal3Cards() {
+    func deal3Cards() {
         if deck.count > 2 {
             for _ in 1...3 {
                 draw()
@@ -51,9 +49,9 @@ class  SetGame
             } else {
                 cardsInPlay[cardsInPlay.index(of: card)!] = deck.remove(at: deck.count.arc4random)
             }
-            matchedCards.removeAll()
-            selectedCards.removeAll()
         }
+        matchedCards.removeAll()
+        selectedCards.removeAll()
     }
     
     

@@ -10,16 +10,11 @@ import UIKit
 
 class SetViewController: UIViewController
 {
-    
-    
     var game = SetGame()
-    
     
     private var visibleCardsInPlay: [Card] {
         return game.cardsInPlay.filter { !game.hiddenCards.contains($0)}
     }
-    
-    
     
     @IBOutlet weak var setGameView: SetGameView!
     @IBAction func deal3Cards(_ sender: UIButton) {
@@ -31,11 +26,11 @@ class SetViewController: UIViewController
         for _ in 1...4 {
             game.deal3Cards()
         }
+        print("newGameButton UpdateViewFromModel")
         updateViewFromModel()
     }
     
     private lazy var grid = Grid(layout: .aspectRatio(8/5))
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,15 +42,21 @@ class SetViewController: UIViewController
         for _ in 1...4 {
             game.deal3Cards()
         }
+        print("viewDidLoad UpdateViewFromModel")
         updateViewFromModel()
     }
     
     @objc private func deal3CardsAndUpdateView() {
         if game.matchedCards.isEmpty {
+            for subview in setGameView.subviews {
+                subview.removeFromSuperview()
+            }
             game.deal3Cards()
         } else {
             game.replaceOrHideMatchedCards()
         }
+        
+        print("deal3Cards UpdateViewFormModel")
         updateViewFromModel()
     }
     
@@ -64,6 +65,7 @@ class SetViewController: UIViewController
         case .changed,.ended:
             if abs(recognizer.rotation) > CGFloat.pi / 4  {
                 game.shuffleCardsInPlay()
+                print("shuffleGameCardsInPlay Button UpdateViewFromModel")
                 updateViewFromModel()
                 recognizer.rotation = 0.0
             }
@@ -81,7 +83,7 @@ class SetViewController: UIViewController
                 if (grid[index]?.contains(touchPoint))!{
                     print(index)
                     game.selectCard(at: game.cardsInPlay.index(of: visibleCardsInPlay[index])!)
-                    print("next: updateViewFromModel     ", separator: " ", terminator: "")
+                    print("selectCard Button updateViewFromModel     ", separator: " ", terminator: "")
                     updateViewFromModel()
                     break // visibleCardsLoop
                 }
@@ -104,7 +106,10 @@ class SetViewController: UIViewController
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        print("viewDidLayoutSubviews")
+        for subview in setGameView.subviews {
+            subview.removeFromSuperview()
+        }
+        print("viewDidLayoutSubviews UpdateViewFromModel")
         updateViewFromModel()
     }
     
@@ -115,9 +120,7 @@ class SetViewController: UIViewController
     
     
     private func updateViewFromModel() {
-        for subview in setGameView.subviews {
-            subview.removeFromSuperview()
-        }
+        
         grid.frame = CGRect(
             origin: CGPoint(x: setGameView.frame.origin.x - setGameView.frame.size.width / Constants.setGameViewOffsetToViewWidth,
                             y: setGameView.frame.origin.y - setGameView.frame.size.height / Constants.setGameViewOffsetToViewHeight),
@@ -129,7 +132,7 @@ class SetViewController: UIViewController
             let card = visibleCardsInPlay[index]
             let setCardView = SetCardView()
             setGameView.addSubview(setCardView)
-            setCardView.frame.origin = (grid[index]?.origin)!
+            setCardView.frame.origin = (self.grid[index]?.origin)!
             setCardView.frame.size = grid.cellSize
             setCardView.frame = setCardView.frame.insetBy(dx: grid.cellSize.width / Constants.setCardViewInset, dy: grid.cellSize.height / Constants.setCardViewInset)
 
@@ -150,6 +153,7 @@ class SetViewController: UIViewController
                 setCardView.layer.borderWidth = setCardView.frame.height / Constants.selectedOrMatchedBorderWidthToViewHeight
                 setCardView.layer.borderColor = UIColor.green.cgColor
             }
+            
             
             
             

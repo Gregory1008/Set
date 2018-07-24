@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 @IBDesignable
 class SetCardView: UIView {
     
@@ -44,7 +43,7 @@ class SetCardView: UIView {
 //        case notMatched
 //    }
     
-    // MARK: shape funktions
+    // MARK: shape funktions return value is a UIBezierPath, shape functions argument is the offset in X-axis direction
     
     private func diamond(moveBy moveDistance: CGFloat) -> UIBezierPath {
         let path = UIBezierPath()
@@ -53,10 +52,6 @@ class SetCardView: UIView {
         path.addLine(to: CGPoint(x: bounds.midX + moveDistance, y: bounds.size.height / 10 * 9))
         path.addLine(to: CGPoint(x: bounds.midX - (bounds.size.height / 8) + moveDistance, y: bounds.midY))
         path.close()
-        
-       // path.append(path)
-        
-        // path.lineWidth = linewidth
         return path
     }
     
@@ -71,9 +66,6 @@ class SetCardView: UIView {
         path.addLine(to: pointR)
         path.addArc(withCenter: CGPoint(x: bounds.midX + moveDistance, y: pointR.y), radius: halfOvalWidth, startAngle: 0.0, endAngle: CGFloat.pi, clockwise: true)
         path.close()
-        
-        // path.lineWidth = linewidth
-        
         return path
     }
     
