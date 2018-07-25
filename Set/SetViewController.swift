@@ -164,7 +164,7 @@ class SetViewController: UIViewController
     
     private struct Constants {
         static let setGameViewOffsetToViewWidth: CGFloat = 100
-        static let setGameViewOffsetToViewHeight: CGFloat = 30
+        static let setGameViewOffsetToViewHeight: CGFloat = 25 // 25 on Iphone 8     30 on Ipad pro 10.5
         static let cornerRadiusToViewHeight: CGFloat = 4
         static let borderWidthToViewHeight: CGFloat = 30
         static let selectedOrMatchedBorderWidthToViewHeight: CGFloat = 15
