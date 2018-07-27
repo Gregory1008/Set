@@ -35,14 +35,7 @@ class SetCardView: UIView {
         case diamond
         case squiggle
     }
-    
-//    enum Border {
-//        case selected
-//        case normal
-//        case matched
-//        case notMatched
-//    }
-    
+
     // MARK: shape funktions return value is a UIBezierPath, shape functions argument is the offset in X-axis direction
     
     private func diamond(moveBy moveDistance: CGFloat) -> UIBezierPath {
@@ -98,6 +91,7 @@ class SetCardView: UIView {
         
         return path
         
+        //   tweaking the control points
         // for point in [pointP, pointP1, pointP2, pointQ, pointQ1, pointQ2, pointR, pointR1, pointR2, pointS, pointS1, pointS2] {
         // point.strokePoint()
         //}
@@ -108,7 +102,8 @@ class SetCardView: UIView {
     private func paint() {
         
         let createSymbol: (CGFloat) -> UIBezierPath
-        
+   
+        // assign the appropiate shapeFunction to createSymbol
         switch symbol {
         case .diamond:
             createSymbol = diamond(moveBy:)
@@ -118,6 +113,7 @@ class SetCardView: UIView {
             createSymbol = squiggle(moveBy:)
         }
         
+        //  one, two or three symbol paths with the fitting offset
         let path = UIBezierPath()
         path.lineWidth = linewidth
         switch numberOfSymbols {
@@ -220,6 +216,7 @@ extension CGPoint {
     func offsetBy( dx: CGFloat, dy: CGFloat) -> CGPoint {
         return CGPoint(x: self.x + dx , y: self.y + dy)
     }
+    // make contol points visible
     func strokePoint()  {
         let path = UIBezierPath()
         path.move(to: self.offsetBy(dx: 2, dy: 2))

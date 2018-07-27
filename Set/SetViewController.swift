@@ -1,10 +1,13 @@
 //
-//  ViewController.swift
+//  SetViewController.swift
 //  Set
 //
 //  Created by Roland Herzfeld on 06.03.18.
 //  Copyright © 2018 Roland Herzfeld. All rights reserved.
 //
+//  See the rules of Set to play the game
+//  Swipe down to deal three cards
+//  RotateGesture with an angle of PI/4 shuffles the cards in play
 
 import UIKit
 
@@ -42,7 +45,7 @@ class SetViewController: UIViewController
         for _ in 1...4 {
             game.deal3Cards()
         }
-        print("viewDidLoad UpdateViewFromModel")
+        //print("viewDidLoad UpdateViewFromModel")
         updateViewFromModel()
     }
     
@@ -65,7 +68,7 @@ class SetViewController: UIViewController
         case .changed,.ended:
             if abs(recognizer.rotation) > CGFloat.pi / 4  {
                 game.shuffleCardsInPlay()
-                print("shuffleGameCardsInPlay Button UpdateViewFromModel")
+                //print("shuffleGameCardsInPlay Button UpdateViewFromModel")
                 updateViewFromModel()
                 recognizer.rotation = 0.0
             }
@@ -83,7 +86,7 @@ class SetViewController: UIViewController
                 if (grid[index]?.contains(touchPoint))!{
                     print(index)
                     game.selectCard(at: game.cardsInPlay.index(of: visibleCardsInPlay[index])!)
-                    print("selectCard Button updateViewFromModel     ", separator: " ", terminator: "")
+                    //print("selectCard Button updateViewFromModel     ", separator: " ", terminator: "")
                     updateViewFromModel()
                     break // visibleCardsLoop
                 }
@@ -109,7 +112,7 @@ class SetViewController: UIViewController
         for subview in setGameView.subviews {
             subview.removeFromSuperview()
         }
-        print("viewDidLayoutSubviews UpdateViewFromModel")
+        //print("viewDidLayoutSubviews UpdateViewFromModel")
         updateViewFromModel()
     }
     
@@ -122,11 +125,10 @@ class SetViewController: UIViewController
     private func updateViewFromModel() {
         
         grid.frame = CGRect(
-            origin: CGPoint(x: setGameView.frame.origin.x - setGameView.frame.size.width / Constants.setGameViewOffsetToViewWidth,
-                            y: setGameView.frame.origin.y - setGameView.frame.size.height / Constants.setGameViewOffsetToViewHeight),
+            origin: CGPoint(x: setGameView.bounds.minX ,y: setGameView.bounds.minY),
             size: CGSize(width: setGameView.frame.size.width, height: setGameView.frame.size.height))
         grid.cellCount = visibleCardsInPlay.count
-        print("visibleCardsInPlay.count: \(visibleCardsInPlay.count)")
+        //print("visibleCardsInPlay.count: \(visibleCardsInPlay.count)")
         for index in 0 ..< visibleCardsInPlay.count {
             print(index, separator: " ", terminator: " ")
             let card = visibleCardsInPlay[index]
@@ -159,12 +161,10 @@ class SetViewController: UIViewController
             
         }
         updateScoreLabel()
-        print("updated ScoreLabel")
+        //print("updated ScoreLabel")
     }
     
     private struct Constants {
-        static let setGameViewOffsetToViewWidth: CGFloat = 100
-        static let setGameViewOffsetToViewHeight: CGFloat = 25 // 25 on Iphone 8     30 on Ipad pro 10.5
         static let cornerRadiusToViewHeight: CGFloat = 4
         static let borderWidthToViewHeight: CGFloat = 30
         static let selectedOrMatchedBorderWidthToViewHeight: CGFloat = 15
