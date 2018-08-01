@@ -56,6 +56,11 @@ class SetViewController: UIViewController
             }
             game.deal3Cards()
         } else {
+            if game.deck.isEmpty {
+                for subview in setGameView.subviews {
+                    subview.removeFromSuperview()
+                }
+            }
             game.replaceOrHideMatchedCards()
         }
         
@@ -85,6 +90,11 @@ class SetViewController: UIViewController
             visibleCardsLoop: for index in 0 ..< visibleCardsInPlay.count {
                 if (grid[index]?.contains(touchPoint))!{
                     print(index)
+                    if !game.matchedCards.isEmpty {
+                        for subview in setGameView.subviews {
+                            subview.removeFromSuperview()
+                        }
+                    }
                     game.selectCard(at: game.cardsInPlay.index(of: visibleCardsInPlay[index])!)
                     //print("selectCard Button updateViewFromModel     ", separator: " ", terminator: "")
                     updateViewFromModel()
@@ -130,7 +140,7 @@ class SetViewController: UIViewController
         grid.cellCount = visibleCardsInPlay.count
         //print("visibleCardsInPlay.count: \(visibleCardsInPlay.count)")
         for index in 0 ..< visibleCardsInPlay.count {
-            print(index, separator: " ", terminator: " ")
+            // print(index, separator: " ", terminator: " ")
             let card = visibleCardsInPlay[index]
             let setCardView = SetCardView()
             setGameView.addSubview(setCardView)
